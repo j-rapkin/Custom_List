@@ -149,7 +149,24 @@ namespace Custom_List
 			}
 			return firstList;
 		}
+		public CustomList<T> Zipper(CustomList<T> secondList)
+		{
+			CustomList<T> zippedList = new CustomList<T>();
+			int temporaryCount = Math.Max(count, secondList.Count);
 
+			for (int i = 0, j = 0; i < temporaryCount; i++, j++)
+			{
+				if (i < count)
+				{
+					zippedList.Add(arrayOfElements[i]);
+				}
+				if (i < secondList.count)
+				{
+					zippedList.Add(secondList[i]);
+				}
+			}
+			return zippedList;
+		}
 		//private methods
 		private bool IsOverCapacity()
 		{
