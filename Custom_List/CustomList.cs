@@ -84,6 +84,9 @@ namespace Custom_List
 			arrayOfElements = temporaryArray;
 			arrayCapacity *= 2;
 		}
-
+		private void IncrementCount()
+		{
+			count++;
+		}
 	}
 }
