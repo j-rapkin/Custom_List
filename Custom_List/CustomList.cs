@@ -103,6 +103,27 @@ namespace Custom_List
 
 			return newString.ToString();
 		}
+		/// <summary>
+		/// Operator overload for adding two list objects together. The parameters required are of Type CustomList<typeparamref name=" T"/>
+		/// </summary>
+		/// <param name="firstList"></param>
+		/// <param name="secondList"></param>
+		/// <returns> 
+		/// returns a new list containing the elements of two custom lists.
+		/// </returns>
+		public static CustomList<T> operator +(CustomList<T> firstList, CustomList<T> secondList)
+		{
+			CustomList<T> resultOfAddedLists = new CustomList<T>();
+			foreach (T item in firstList)
+			{
+				resultOfAddedLists.Add(item);
+			}
+			foreach (T item in secondList)
+			{
+				resultOfAddedLists.Add(item);
+			}
+			return resultOfAddedLists;
+		}
 		//private methods
 		private bool IsOverCapacity()
 		{
