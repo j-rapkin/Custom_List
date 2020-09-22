@@ -63,6 +63,16 @@ namespace Custom_List
 			arrayCapacity = 4;
 			arrayOfElements = new T[arrayCapacity];
 		}
-
+		private bool IsOverCapacity()
+		{
+			if (count >= arrayCapacity)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
 	}
 }
