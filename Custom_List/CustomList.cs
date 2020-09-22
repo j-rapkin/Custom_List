@@ -92,6 +92,18 @@ namespace Custom_List
 		{
 			RemoveElementFromArray(elementToRemove);
 		}
+
+		public override string ToString()
+		{
+			StringBuilder newString = new StringBuilder();
+			for (int i = 0; i < count; i++)
+			{
+				newString.Append(arrayOfElements[i]);
+			}
+
+			return newString.ToString();
+		}
+		//private methods
 		private bool IsOverCapacity()
 		{
 			if (count >= arrayCapacity)
