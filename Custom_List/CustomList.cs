@@ -63,7 +63,26 @@ namespace Custom_List
 			arrayCapacity = 4;
 			arrayOfElements = new T[arrayCapacity];
 		}
-
+		/// <summary>
+		/// Adds an item to the collection in <typeparamref name=" CustomList"/> 
+		/// </summary>
+		/// <param name="element">
+		/// A parameter must be passed in, but the parameter can be of any type. This method does not have a return type.
+		/// </param>
+		public void Add(T element)
+		{
+			if (IsOverCapacity() == true)
+			{
+				CreateNewArrayWithLargerCapacityAndExistingElements();
+				AddElementToArray(element);
+				IncrementCount();
+			}
+			else
+			{
+				AddElementToArray(element);
+				IncrementCount();
+			}
+		}
 		private bool IsOverCapacity()
 		{
 			if (count >= arrayCapacity)
