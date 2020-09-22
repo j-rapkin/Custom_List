@@ -104,5 +104,19 @@ namespace Custom_List.UnitTests
 			//assert
 			Assert.AreEqual(expected, aCustomList.Count);
 		}
+		[TestMethod]
+		public void Remove_OneElement_ReturnElementAtIndexZero()
+		{
+			//arrange
+			CustomList<int> aCustomList = new CustomList<int>();
+			int expected = 1;
+			int removeValue = 2;
+			aCustomList.Add(1);
+			aCustomList.Add(2);
+			//act
+			aCustomList.Remove(removeValue);
+			//assert
+			Assert.AreEqual(expected, aCustomList[0]);
+		}
 	}
 }
