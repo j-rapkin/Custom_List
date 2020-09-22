@@ -112,5 +112,25 @@ namespace Custom_List
 		{
 			arrayOfElements[count] = element;
 		}
+		private void RemoveElementFromArray(T assignedElement)
+		{
+			T[] temporaryArray = new T[arrayCapacity];
+			int temporaryCount = count;
+			bool removed = false;
+			for (int i = 0, j = 0; i < temporaryCount; i++, j++)
+			{
+				if (assignedElement.Equals(arrayOfElements[i]) && !removed)
+				{
+					j--;
+					removed = true;
+					count--;
+				}
+				else
+				{
+					temporaryArray[j] = arrayOfElements[i];
+				}
+			}
+			arrayOfElements = temporaryArray;
+		}
 	}
 }
