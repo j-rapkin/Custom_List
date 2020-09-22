@@ -31,7 +31,7 @@ namespace Custom_List.UnitTests
 			Assert.AreEqual(expected, aCustomList.Count);
 		}
 		[TestMethod]
-		public void Add_TwoValues_ReturnElementAtIndex()
+		public void Add_TwoElements_ReturnElementAtIndex()
 		{
 			//arrange
 			CustomList<int> aCustomList = new CustomList<int>();
@@ -45,6 +45,24 @@ namespace Custom_List.UnitTests
 
 			//Assert
 			Assert.AreEqual(expected, aCustomList[1]);
+		}
+		[TestMethod]
+		public void Add_ThreeElements_CapacityIsFour()
+		{
+			//arrange
+			CustomList<int> aCustomList = new CustomList<int>();
+			int expected = 4;
+			int elementOne = 10;
+			int elementTwo = 15;
+			int elementThree = 20;
+
+			//act
+			aCustomList.Add(elementOne);
+			aCustomList.Add(elementTwo);
+			aCustomList.Add(elementThree);
+
+			//Assert
+			Assert.AreEqual(expected, aCustomList.Capacity);
 		}
 	}
 }
