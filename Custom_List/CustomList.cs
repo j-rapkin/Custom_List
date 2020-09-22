@@ -83,6 +83,15 @@ namespace Custom_List
 				IncrementCount();
 			}
 		}
+		//REMOVE METHOD FUNCTIONALITY
+		/// <summary>
+		/// Removes an item from the collection in <typeparamref name=" CustomList"/>.
+		/// </summary>
+		/// <param name="elementToRemove"></param>
+		public void Remove(T elementToRemove)
+		{
+			RemoveElementFromArray(elementToRemove);
+		}
 		private bool IsOverCapacity()
 		{
 			if (count >= arrayCapacity)
