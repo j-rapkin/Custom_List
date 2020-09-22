@@ -93,6 +93,7 @@ namespace Custom_List
 			RemoveElementFromArray(elementToRemove);
 		}
 
+		//Method Overrides
 		public override string ToString()
 		{
 			StringBuilder newString = new StringBuilder();
@@ -124,6 +125,31 @@ namespace Custom_List
 			}
 			return resultOfAddedLists;
 		}
+		/// <summary>
+		/// Operator overload for removing the values of one list object from the other. When called, this method will remove all instances of an element in the first list object that are found in the second list object.
+		/// Once removed the method will return the first list without matching elements.
+		/// </summary>
+		/// <param name="firstList"></param>
+		/// <param name="secondList"></param>
+		/// <returns>
+		/// The sum of two CustomList objects.
+		/// </returns>
+
+		public static CustomList<T> operator -(CustomList<T> firstList, CustomList<T> secondList)
+		{
+			foreach (T item in firstList)
+			{
+				for (int i = 0; i < secondList.count; i++)
+				{
+					if (item.Equals(secondList[i]))
+					{
+						firstList.Remove(item);
+					}
+				}
+			}
+			return firstList;
+		}
+
 		//private methods
 		private bool IsOverCapacity()
 		{
