@@ -74,5 +74,16 @@ namespace Custom_List
 				return false;
 			}
 		}
+		private void CreateNewArrayWithLargerCapacityAndExistingElements()
+		{
+			T[] temporaryArray = new T[arrayCapacity * 2];
+			for (int i = 0; i < arrayCapacity; i++)
+			{
+				temporaryArray[i] = arrayOfElements[i];
+			}
+			arrayOfElements = temporaryArray;
+			arrayCapacity *= 2;
+		}
+
 	}
 }
