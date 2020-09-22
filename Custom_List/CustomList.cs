@@ -63,6 +63,7 @@ namespace Custom_List
 			arrayCapacity = 4;
 			arrayOfElements = new T[arrayCapacity];
 		}
+
 		private bool IsOverCapacity()
 		{
 			if (count >= arrayCapacity)
@@ -87,6 +88,10 @@ namespace Custom_List
 		private void IncrementCount()
 		{
 			count++;
+		}
+		private void AddElementToArray(T element)
+		{
+			arrayOfElements[count] = element;
 		}
 	}
 }
