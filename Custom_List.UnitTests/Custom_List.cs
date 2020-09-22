@@ -64,5 +64,30 @@ namespace Custom_List.UnitTests
 			//Assert
 			Assert.AreEqual(expected, aCustomList.Capacity);
 		}
+		[TestMethod]
+		public void Add_SixElements_CapacityIsEight()
+		{
+			//arrange
+			CustomList<int> aCustomList = new CustomList<int>();
+			int expected = 8;
+			int elementOne = 1;
+			int elementTwo = 2;
+			int elementThree = 3;
+			int elementFour = 4;
+			int elementFive = 5;
+			int elementSix = 6;
+
+			//act
+			aCustomList.Add(elementOne);
+			aCustomList.Add(elementTwo);
+			aCustomList.Add(elementThree);
+			aCustomList.Add(elementFour);
+			aCustomList.Add(elementFive);
+			aCustomList.Add(elementSix);
+
+
+			//Assert
+			Assert.AreEqual(expected, aCustomList.Capacity);
+		}
 	}
 }
