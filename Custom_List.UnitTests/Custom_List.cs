@@ -89,5 +89,20 @@ namespace Custom_List.UnitTests
 			//Assert
 			Assert.AreEqual(expected, aCustomList.Capacity);
 		}
+		//REMOVE METHOD TESTS
+		[TestMethod]
+		public void Remove_OneElement_DecrementCountOfList()
+		{
+			//arrange
+			CustomList<int> aCustomList = new CustomList<int>();
+			int expected = 1;
+			int removeValue = 1;
+			aCustomList.Add(1);
+			aCustomList.Add(2);
+			//act
+			aCustomList.Remove(removeValue);
+			//assert
+			Assert.AreEqual(expected, aCustomList.Count);
+		}
 	}
 }
