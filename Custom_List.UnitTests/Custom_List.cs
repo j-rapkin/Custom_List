@@ -17,5 +17,18 @@ namespace Custom_List.UnitTests
 			//assert
 			Assert.AreEqual(expectedCapacity, actualCapacity);
 		}
+		//ADD METHOD TESTS
+		[TestMethod]
+		public void Add_OneElement_IncrementCountOfList()
+		{
+			//arrange
+			CustomList<int> aCustomList = new CustomList<int>();
+			int expected = 1;
+
+			//act
+			aCustomList.Add(expected);
+			//assert
+			Assert.AreEqual(expected, aCustomList.Count);
+		}
 	}
 }
